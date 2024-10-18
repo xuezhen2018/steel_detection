@@ -1,0 +1,32 @@
+import os
+import matplotlib.pyplot as plt
+
+# 指定文件夹路径
+folder_path = "./src/steel_detection/output"
+
+# 存储深度信息的列表
+depth_values = []
+
+# 遍历文件夹中的txt文件
+for filename in os.listdir(folder_path):
+    if filename.endswith(".txt"):
+        with open(os.path.join(folder_path, filename), 'r') as file:
+            lines = file.readlines()
+            for line in lines:
+                if "Depth" in line:
+                    # 解析深度值并添加到列表
+                    depth_str = line.split("Depth: ")[1]
+                    depth = float(depth_str)
+                    depth_values.append(depth)
+
+# 绘制深度信息的统计图
+plt.hist(depth_values, bins=20, color='blue', edgecolor='black')
+plt.xlabel('Depth')
+plt.ylabel('Count')
+plt.title('Depth Histogram')
+
+# 保存图像
+plt.savefig('depth_histogram.png')
+
+# 显示图表
+plt.show()

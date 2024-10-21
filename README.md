@@ -4,6 +4,12 @@
 
 This README provides a step-by-step guide for setting up and running the Steel Detection ROS package within a Robot Operating System (ROS) environment. The package processes data from a camera and outputs detection results.
 
+## Dataset
+
+You can download the required dataset from the following link:
+
+- [MulSIR-252](https://drive.google.com/drive/folders/1F2h8GPhrtqMsQicXzB6tLd1090A1p7v_?usp=drive_link)
+
 ## Prerequisites
 
 - ROS installed (e.g., ROS Noetic)
